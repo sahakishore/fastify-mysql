@@ -1,0 +1,7 @@
+{
+    "DB_HOST":"localhost",
+    "DB_USER":"root",
+    "DB_PASS":"sacrolabs123",
+    "DB_PORT":"3306",
+    "DB_DATABASE":"data"
+}
