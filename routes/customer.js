@@ -31,9 +31,9 @@ const deleteCustomerById = async (req, reply) => {
 
 const addCustomer = async (req, reply) => {
     try {
-        const {ID,NAME,AGE,ADDRESS,SALARY}= req.body
-        let customerData = await executeQuery('insert into customers (ID,NAME,AGE,ADDRESS,SALARY) values (?,?, ?, ?, ? )',[ID,NAME,AGE,ADDRESS,SALARY])
-        reply.status(201).send(customerData)
+        const {ID,NAME,AGE,ADDRESS,PHONE_NO,EMAIL}= req.body
+        let customerData = await executeQuery('insert into customers (ID,NAME,AGE,ADDRESS,PHONE_NO,EMAIL) values (?,?, ?, ?, ? ,?)',[ID,NAME,AGE,ADDRESS,PHONE_NO,EMAIL])
+        reply.status(200).send(customerData)
     } catch (err) {
         reply.status(400).send(err)
     }
@@ -42,8 +42,8 @@ const addCustomer = async (req, reply) => {
 const updateCustomer = async (req, reply) => {
     let id = req.params.id
     try {
-        const {NAME,AGE,ADDRESS,SALARY}= req.body
-        let customerData = await executeQuery(`update customers set NAME=?,AGE=?,ADDRESS=?,SALARY=? where ID=${id}`,[NAME,AGE,ADDRESS,SALARY])
+        const {NAME,AGE,ADDRESS,PHONE_NO,EMAIL}= req.body
+        let customerData = await executeQuery(`update customers set NAME=?,AGE=?,ADDRESS=?,PHONE_NO=?,EMAIL=? where ID=${id}`,[NAME,AGE,ADDRESS,PHONE_NO,EMAIL])
         reply.status(200).send(customerData)
     } catch (err) {
         reply.status(400).send(err)

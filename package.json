@@ -15,6 +15,7 @@
     "@mysql/xdevapi": "^8.0.27",
     "cors": "^2.8.5",
     "fastify": "^3.22.1",
+    "fastify-cors": "^6.0.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.2",
     "nodemon": "^2.0.14"
